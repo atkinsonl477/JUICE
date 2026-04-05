@@ -1,3 +1,6 @@
+This was a little rushed assignment for CSCE-477 (Completely my fault). I am very thankful for the extension I got.
+
+
 the dbInstance creates a psql database and populates it with some users with generic emails and passwords
 
 

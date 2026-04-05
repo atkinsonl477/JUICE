@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  db:
+    build: ./dbInstance
+    container_name: db_instance
+    ports:
+      - "5432:5432"
+    
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  web:
+    build: ./webserver
+    container_name: webserver_instance
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  
+  webinsecure:
+    build: ./webserverinsecure
+    container_name: webserver_instance_insecure
+    ports:
+      - "8081:8080"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
